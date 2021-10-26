@@ -54,13 +54,14 @@ public class UserRegistration {
 				}
 				break;
 			case 5:
-				final String PASSWORD = "^([A-Z]{1}[a-zA-Z0-9]{8,})";
+				final String PASSWORD = "^([A-Z]{1}[a-zA-Z0-9]{8,}[0-9]{1})";
 				System.out.println("enter password:");
 				String passWord = scanner.next();
 				boolean resultForPassWord = Pattern.matches(PASSWORD, passWord);
 				System.out.println(resultForPassWord);
 				if (resultForPassWord == false) {
-					System.out.println("enter valid password atleast 8 characters and one uppercase letter:");
+					System.out.println(
+							"enter valid password atleast 8 characters and one uppercase letter and one number:");
 				}
 				break;
 			default:
