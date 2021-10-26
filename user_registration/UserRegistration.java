@@ -9,7 +9,7 @@ public class UserRegistration {
 		Scanner scanner = new Scanner(System.in);
 		boolean check = true;
 		while (check) {
-			System.out.println("enter option to validate\n 1.FirstName:");
+			System.out.println("enter option to validate\n 1.FirstName: 2.LastName:");
 			int option = scanner.nextInt();
 			scanner.nextLine();
 			switch (option) {
@@ -21,6 +21,16 @@ public class UserRegistration {
 				System.out.println(result);
 				if (result == false) {
 					System.out.println("enter valid firstname:");
+				}
+				break;
+			case 2:
+				final String LASTNAME = "([A-Z]{1}[a-zA-Z]{3,})";
+				System.out.println("enter lastName:");
+				String lastName = scanner.next();
+				boolean resultForLastName = Pattern.matches(LASTNAME, lastName);
+				System.out.println(resultForLastName);
+				if (resultForLastName == false) {
+					System.out.println("enter valid lastName:");
 					break;
 				}
 			default:
