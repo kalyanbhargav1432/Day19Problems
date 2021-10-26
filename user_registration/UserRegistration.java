@@ -9,7 +9,7 @@ public class UserRegistration {
 		Scanner scanner = new Scanner(System.in);
 		boolean check = true;
 		while (check) {
-			System.out.println("enter option to validate\n 1.FirstName: 2.LastName:");
+			System.out.println("enter option to validate\n 1.FirstName: 2.LastName:3.Email:");
 			int option = scanner.nextInt();
 			scanner.nextLine();
 			switch (option) {
@@ -31,8 +31,18 @@ public class UserRegistration {
 				System.out.println(resultForLastName);
 				if (resultForLastName == false) {
 					System.out.println("enter valid lastName:");
-					break;
 				}
+				break;
+			case 3:
+				final String EMAIL = "([a-zA-Z0-9_.-]+)([\\\\.])([a-zA-Z]+)@([a-zA-Z]+)([\\.])([a-zA-Z]+)([\\\\.])([a-zA-Z]+)";
+				System.out.println("enter email:");
+				String email = scanner.next();
+				boolean resultForEmail = Pattern.matches(EMAIL, email);
+				System.out.println(resultForEmail);
+				if (resultForEmail == false) {
+					System.out.println("enter valid email:");
+				}
+				break;
 			default:
 				check = false;
 				break;
