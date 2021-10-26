@@ -9,7 +9,7 @@ public class UserRegistration {
 		Scanner scanner = new Scanner(System.in);
 		boolean check = true;
 		while (check) {
-			System.out.println("enter option to validate\n 1.FirstName 2.LastName 3.Email: 4.mobileNumber");
+			System.out.println("enter option to validate\n 1.FirstName 2.LastName 3.Email: 4.mobileNumber 5.password");
 			int option = scanner.nextInt();
 			scanner.nextLine();
 			switch (option) {
@@ -51,6 +51,16 @@ public class UserRegistration {
 				System.out.println(resultForMobileNumber);
 				if (resultForMobileNumber == false) {
 					System.out.println("enter valid mobileNumber:");
+				}
+				break;
+			case 5:
+				final String PASSWORD = "^([a-zA-Z0-9]{8,})";
+				System.out.println("enter password:");
+				String passWord = scanner.next();
+				boolean resultForPassWord = Pattern.matches(PASSWORD, passWord);
+				System.out.println(resultForPassWord);
+				if (resultForPassWord == false) {
+					System.out.println("enter valid password atleast 8 characters:");
 				}
 				break;
 			default:
